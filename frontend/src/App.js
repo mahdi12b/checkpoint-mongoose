@@ -9,10 +9,10 @@ function App() {
   return (
     <>
     <NavBar/>
+    <Home/>
     <Switch>
-      <Route exact path='/' component={Home}/>
-      <Route  path='/contacts' component={ContactList}/>
-      <Route  path='/add' component={Add}/>
+      <Route exact path='/' component={ContactList}/>
+      <Route  path={['/add','/edit']} component={Add}/>
       <Route  path='/*' component={Errors}/>
       
     </Switch>

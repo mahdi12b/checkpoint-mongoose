@@ -53,6 +53,15 @@ const Contact = require("../models/Contact")
             
         }
 
+        exports.getById = async (req, res) => {
+            try {
+              const result = await Contact.findOne({ _id: req.params.id });
+              res.send({ response:result, msg: "getting contact succ" });
+            } catch (error) {
+              res.status(400).send({ msg: " there is no contact with id " });
+            }
+          };
+
   
 
         exports.deleteContact = async (req,res)=>{
@@ -67,6 +76,8 @@ const Contact = require("../models/Contact")
             }
         }
 
+       
+       
         exports.putContact = async(req,res)=>{
             try {
                 const updateContact = await Contact.updateOne({_id:req.params.id},{$set:{...req.body}})

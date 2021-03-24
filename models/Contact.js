@@ -11,7 +11,7 @@ const mongoose = require('mongoose');
           required:true,
           unique:true
         },
-      favoriteFoods:String
+      phone:Number
       
       
   });

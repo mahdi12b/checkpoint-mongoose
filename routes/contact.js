@@ -14,17 +14,21 @@ console.log(controllers.deletecontact)
 
 
 
-router.post('/contact',controllers.postContact)
+router.post('/',controllers.postContact)
 
 
-router.get('/contact',controllers.getAllContact)
+router.get('/',controllers.getAllContact)
+
+//GET one contact by id
+router.get("/:id", controllers.getById);
 
 //DELETE method 
-router.delete('/contact/:id',controllers.deleteContact)
+router.delete('/:id',controllers.deleteContact)
+
 
 
 //PUT methdod
 
 
-router.put('/contact/:id',controllers.putContact)
+router.put('/:id',controllers.putContact)
 module.exports=router;
